@@ -1,0 +1,17 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix dto: <http://dehisre.ios-regensburg.de/ontology/> .
+@prefix dtv: <http://dehisre.ios-regensburg.de/vocabulary/> .
+
+@prefix dtv-travel: <http://dehisre.ios-regensburg.de/vocabulary/travel/> .
+
+
+dtv:travel a skos:ConceptScheme ;
+  rdfs:label "Reisearten"@de , "Travel Types"@en ;
+  skos:notation "tt" ;
+  skos:prefLabel "Reisearten"@de ;
+  skos:prefLabel "Travel Types"@en 
+.

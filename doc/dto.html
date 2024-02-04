@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <style class="anchorjs"></style><style>
+					body {
+						margin: 0;
+						font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+							"Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+							"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+							"Noto Color Emoji";
+						background-color: #fff;
+					}
+					
+					.anchor {
+						float: left;
+						padding-right: 4px;
+						margin-left: -20px;
+						line-height: 1;
+						padding-top: 12px;
+					}
+							
+					a {
+						color: #007bff;
+						text-decoration: none;
+						background-color: transparent;
+					}
+					
+					a:-webkit-any-link {
+						cursor: pointer;
+					}
+					
+					.p {
+						font-size: 0.875em;
+					}
+					
+					h2 {
+						margin: 25px 0px 10px 0px;
+					}
+					
+					h3 {
+						font-size: 1.4em;
+					}
+					
+					@media only print {
+					}
+					
+					@page {
+						size: A4 portrait;
+						margin-top: 1.2cm;
+						margin-bottom: 1.2cm;
+						margin-left: 1.2cm;
+						margin-right: 1.2cm;
+						background-repeat: no-repeat;
+						background-position: 40px 10px;
+						
+						@bottom-center
+						{
+						content
+						:
+						counter(
+						page
+						);
+					}
+					
+					}
+							
+					/* This section draw the format web */
+					.ul_type_none {
+						list-style-type: none;
+					}
+					
+					.sp_list_description_properties {
+						/* don't set it lower otherwise it gets hidden in PDF */
+						padding-left: 20px;
+					}
+					
+					dl, ol, ul {
+						margin-top: 0;
+						margin-bottom: 1rem;
+					}
+					
+					li {
+						display: list-item;
+						text-align: -webkit-match-parent;
+					}
+					
+					.sp_section_title_header {
+						font-family: Georgia, Garamond, serif;	
+						margin-top: 25px;
+						margin-bottom: 2.5rem;
+					    font-size: 1.5625rem;
+						display: block;
+						font-weight: 500;
+						color: #1e1e1f;
+						line-height: 1.2em;   
+					}
+					
+					.sp_section_subtitle {
+						font-family: Georgia, Garamond, serif;	
+						margin-top: 0;
+						margin-bottom: 0.5rem;
+						display: block;
+						font-weight: 500;
+						color: #1e1e1f;
+						line-height: 1.2em;  
+					}
+					
+					.sp_section_title_table {
+						font-family: Georgia, Garamond, serif;	
+						/* 0 because URI is right under */
+						margin-bottom: 0rem;
+						display: block;
+						font-weight: 500;
+						color: #1e1e1f;
+						line-height: 1.2em; 
+					}
+							
+
+					.sp_section_title_toc {
+						font-family: Georgia, Garamond, serif;	
+					}
+
+					/* URI below the title of the section */
+					.sp_section_uri	 {
+						margin-top: 0px;
+					}
+
+					/* div wrapping section title and URI below - same as a paragraph margin */
+					.sp_section_title_table_wrapper {
+						margin-bottom: 16px;
+						border-bottom: 1px solid;	
+					}
+					
+					 
+					table {
+						display: table;
+						border-spacing: 0px;
+						margin-bottom: 1rem;
+					}
+					
+					tr:nth-child(even) {
+						background-color: #eee;
+					}
+							
+					.sp_table_prefixes table {
+						border-collapse: collapse;
+						margin-bottom: 1rem;
+						color: #212529;
+					}
+											
+					.sp_table_prefixes td {
+						padding: 0.25rem;
+						vertical-align: top;
+						border-top: 1px solid #dee2e6;
+					}
+					
+					.sp_table_propertyshapes {
+						border-collapse: collapse;
+						width: 100%;
+					}
+										
+					.sp_table_propertyshapes thead {
+						display: table-header-group;
+						vertical-align: middle;
+						border-color: inherit;
+					}
+													
+					.sp_table_propertyshapes tr {
+					    display: table-row;
+					    vertical-align: inherit;
+					    border-color: inherit;
+					}
+													
+					.sp_table_propertyshapes th:nth-child(4) {
+						width: 6%;
+					}
+													
+					.sp_table_propertyshapes td {
+						padding: 0.75rem;
+						border-top: 1px solid #dee2e6;
+					}
+													
+					.sp_table_propertyshapes tbody {
+						display: table-row-group;
+						vertical-align: middle;
+						border-color: inherit;
+					}
+										
+					.sp_table_propertyshapes_col_description {
+						word-break: break-word;
+					}
+					
+					.sp_serialization_badge {
+						margin-right: 0.5em;
+					}
+							
+					
+							.container {
+							    width: calc(100% - 40px);
+							    max-width: 1000px;
+							    margin-left: 300px;
+							    margin-right: auto;
+							}
+							.container {width: calc(100% - 500px);}
+							.toc {
+								position: fixed;
+								top: 0;
+								left: 0;
+								font-size: small;
+								padding: 10px 10px;
+								width: auto;
+								border-right: solid 2px #eeeeee;
+								bottom: 0;
+								overflow-y: scroll;
+								background-color:white;
+								max-width:255px;
+							}
+							.sp_list_toc {padding-left: 0px;}
+							.sp_list_toc_l2 {padding-left: 10px;}					
+						</style>
+      <meta charset="UTF-8">
+      <meta name="lang" content="en">
+      <meta property="og:locale" content="en">
+      <title>Digital Editions of Historical Travelogues Ontology (DTO)</title>
+      <meta name="apple-mobile-web-app-title" content="Digital Editions of Historical Travelogues Ontology (DTO)">
+      <meta name="twitter:title" content="Digital Editions of Historical Travelogues Ontology (DTO)">
+      <meta property="og:title" content="Digital Editions of Historical Travelogues Ontology (DTO)">
+   </head>
+   <body>
+      <div class="sp_container_principal container pt-4">
+         <h1 class="mb-4 sp_section_title_header">Digital Editions of Historical Travelogues Ontology (DTO)</h1>
+         <div><b>Creation date: </b>2022-11-13<br><b>Issue date: </b>2022-11-14<br><b>Last updated: </b>2023-01-04<br><b>Version: </b>0.0.1<br><b>License: </b>https://creativecommons.org/licenses/by/4.0/<br><b>Creator: </b>Ingo Frank<br><b>Publisher: </b>DEHisRe<br><br></div>
+         <div class="row mt-3">
+            <div class="col">
+               <h2 id="abstract" class="sp_section_subtitle"><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#abstract" style="position: absolute; margin-left: -1.25em; padding-right: 0.25em; padding-left: 0.25em;"></a>Abstract</h2><p>Draft
+ of OWL ontology and SHACL shapes for Frame-based Ontology Design 
+Patterns for the DTO (Digital Editions of Historical Travelogues 
+Ontology)</p>
+</div>
+         </div>
+         <div class="sp_section_title_toc toc">
+            <h2 id="Index"><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#Index" style="position: absolute; margin-left: -1.25em; padding-right: 0.25em; padding-left: 0.25em;"></a>Table of Contents</h2>
+            <ul role="list" class="sp_list_toc ul_type_none t-x-mode">
+               <li><a href="#prefixes">Namespaces</a></li>
+               <li><a href="#diagrams">Diagrams</a></li>
+               <li><a href="#documentation">Model documentation</a><ul role="list" class="ul_type_none sp_list_toc_l2">
+                     <li><a href="#dto:CurrencyRestriction">Currency restriction</a></li>
+                     <li><a href="#dto:MeasurementUnitRestriction">Measurement unit restriction</a></li>
+                     <li><a href="#dto:TransportationRestriction">Mode of transportation restriction</a></li>
+                     <li><a href="#dto:PerceptionTypeRestriction">Perception type restriction</a></li>
+                     <li><a href="#dto:TravelTypeRestriction">Travel type restriction</a></li>
+                     <li><a href="#dto:Commercial_buyShape">dto:Commercial_buyShape</a></li>
+                     <li><a href="#dto:DistanceDimensionShape">dto:DistanceDimensionShape</a></li>
+                     <li><a href="#dto:Exchange_currencyShape">dto:Exchange_currencyShape</a></li>
+                     <li><a href="#dto:MoneyDimensionShape">dto:MoneyDimensionShape</a></li>
+                     <li><a href="#dto:Perception_activeShape">dto:Perception_activeShape</a></li>
+                     <li><a href="#dto:TravelShape">dto:TravelShape</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+         <div class="row mt-3">
+            <div class="col">
+               <section id="prefixes">
+                  <h2 class="sp_section_subtitle" id="namespaces"><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#namespaces" style="position: absolute; margin-left: -1.25em; padding-right: 0.25em; padding-left: 0.25em;"></a>Namespaces</h2>
+                  <table class="sp_table_prefixes table table-striped table-responsive">
+                     <thead>
+                        <tr>
+                           <th>Prefix</th>
+                           <th>Namespace</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>dto</td>
+                           <td><a href="http://dehisre.ios-regensburg.de/ontology/" target="_blank">http://dehisre.ios-regensburg.de/ontology/</a></td>
+                        </tr>
+                        <tr>
+                           <td>dtv</td>
+                           <td><a href="http://dehisre.ios-regensburg.de/vocabulary/" target="_blank">http://dehisre.ios-regensburg.de/vocabulary/</a></td>
+                        </tr>
+                        <tr>
+                           <td>ecrm</td>
+                           <td><a href="http://erlangen-crm.org/current/" target="_blank">http://erlangen-crm.org/current/</a></td>
+                        </tr>
+                        <tr>
+                           <td>efrbroo</td>
+                           <td><a href="http://erlangen-crm.org/efrbroo/" target="_blank">http://erlangen-crm.org/efrbroo/</a></td>
+                        </tr>
+                        <tr>
+                           <td>rdfs</td>
+                           <td><a href="http://www.w3.org/2000/01/rdf-schema#" target="_blank">http://www.w3.org/2000/01/rdf-schema#</a></td>
+                        </tr>
+                        <tr>
+                           <td>skos</td>
+                           <td><a href="http://www.w3.org/2004/02/skos/core#" target="_blank">http://www.w3.org/2004/02/skos/core#</a></td>
+                        </tr>
+                        <tr>
+                           <td>xsd</td>
+                           <td><a href="http://www.w3.org/2001/XMLSchema#" target="_blank">http://www.w3.org/2001/XMLSchema#</a></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </section>
+            </div>
+         </div><br><div class="sp_section_row mt-3">
+            <div class="sp_section_col">
+               <section>
+                  <h2 id="diagrams" class="sp_section_subtitle"><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#diagrams" style="position: absolute; margin-left: -1.25em; padding-right: 0.25em; padding-left: 0.25em;"></a>Diagrams</h2>
+                  <div><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="398px" preserveAspectRatio="none" style="width:6313px;height:398px;background:#FFFFFF;" version="1.1" viewBox="0 0 6313 398" width="6313px" zoomAndPan="magnify"><defs xmlns=""></defs><g><!--class dto:DistanceDimensionShape--><a href="#dto:DistanceDimensionShape" target="_top" title="#dto:DistanceDimensionShape" xlink:actuate="onRequest" xlink:href="#dto:DistanceDimensionShape" xlink:show="new" xlink:title="#dto:DistanceDimensionShape" xlink:type="simple"><g id="elem_dto:DistanceDimensionShape"><rect codeline="8" fill="#F1F1F1" height="66.8906" id="uml_dto:DistanceDimensionShape" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="397" x="549.5" y="197"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="207" x="644.5" y="214.9951">dto:DistanceDimensionShape</text><line style="stroke:#181818;stroke-width:0.5;" x1="550.5" x2="945.5" y1="223.2969" y2="223.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="261" x="555.5" y="240.292">ecrm:P3_has_note  : rdfs:Literal  [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="385" x="555.5" y="256.5889">ecrm:P90_has_value  : xsd:integer or xsd:decimal  [1..1]</text></g></a><!--class dto:MeasurementUnitRestriction--><a href="#dto:MeasurementUnitRestriction" target="_top" title="#dto:MeasurementUnitRestriction" xlink:actuate="onRequest" xlink:href="#dto:MeasurementUnitRestriction" xlink:show="new" xlink:title="#dto:MeasurementUnitRestriction" xlink:type="simple"><g id="elem_dto:MeasurementUnitRestriction"><rect codeline="23" fill="#F1F1F1" height="50.5938" id="uml_dto:MeasurementUnitRestriction" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="231" x="632.5" y="341"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="225" x="635.5" y="358.9951">dto:MeasurementUnitRestriction</text><line style="stroke:#181818;stroke-width:0.5;" x1="633.5" x2="862.5" y1="367.2969" y2="367.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="183" x="638.5" y="384.292">skos:inScheme  = dtv:unit</text></g></a><!--class dto:Commercial_buyShape--><a href="#dto:Commercial_buyShape" target="_top" title="#dto:Commercial_buyShape" xlink:actuate="onRequest" xlink:href="#dto:Commercial_buyShape" xlink:show="new" xlink:title="#dto:Commercial_buyShape" xlink:type="simple"><g id="elem_dto:Commercial_buyShape"><rect codeline="12" fill="#F1F1F1" height="26.2969" id="uml_dto:Commercial_buyShape" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="191" x="2168.5" y="35.5"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="185" x="2171.5" y="53.4951">dto:Commercial_buyShape</text></g></a><!--class ecrm:E53_Place--><g id="elem_ecrm:E53_Place"><rect fill="#F1F1F1" height="26.2969" id="uml_ecrm:E53_Place" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="117" x="2770.5" y="217.5"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="2773.5" y="235.4951">ecrm:E53_Place</text></g><!--class ecrm:E19_Physical_Object--><g id="elem_ecrm:E19_Physical_Object"><rect fill="#F1F1F1" height="26.2969" id="uml_ecrm:E19_Physical_Object" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="187" x="981.5" y="217.5"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="984.5" y="235.4951">ecrm:E19_Physical_Object</text></g><!--class efrbroo:F23_Expression_Fragment--><g id="elem_efrbroo:F23_Expression_Fragment"><rect fill="#F1F1F1" height="26.2969" id="uml_efrbroo:F23_Expression_Fragment" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="243" x="1935.5" y="217.5"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="237" x="1938.5" y="235.4951">efrbroo:F23_Expression_Fragment</text></g><!--class ecrm:E21_Person--><g id="elem_ecrm:E21_Person"><rect fill="#F1F1F1" height="26.2969" id="uml_ecrm:E21_Person" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="129" x="4533.5" y="217.5"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="4536.5" y="235.4951">ecrm:E21_Person</text></g><!--class ecrm:E39_Actor--><g id="elem_ecrm:E39_Actor"><rect fill="#F1F1F1" height="26.2969" id="uml_ecrm:E39_Actor" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="116" x="1536" y="217.5"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="1539" y="235.4951">ecrm:E39_Actor</text></g><!--class ecrm:E7_Activity--><g id="elem_ecrm:E7_Activity"><rect fill="#F1F1F1" height="26.2969" id="uml_ecrm:E7_Activity" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="118" x="5312" y="217.5"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="5315" y="235.4951">ecrm:E7_Activity</text></g><!--class dto:MoneyDimensionShape--><a href="#dto:MoneyDimensionShape" target="_top" title="#dto:MoneyDimensionShape" xlink:actuate="onRequest" xlink:href="#dto:MoneyDimensionShape" xlink:show="new" xlink:title="#dto:MoneyDimensionShape" xlink:type="simple"><g id="elem_dto:MoneyDimensionShape"><rect codeline="58" fill="#F1F1F1" height="66.8906" id="uml_dto:MoneyDimensionShape" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="297" x="1203.5" y="197"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="192" x="1256" y="214.9951">dto:MoneyDimensionShape</text><line style="stroke:#181818;stroke-width:0.5;" x1="1204.5" x2="1499.5" y1="223.2969" y2="223.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="261" x="1209.5" y="240.292">ecrm:P3_has_note  : rdfs:Literal  [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="285" x="1209.5" y="256.5889">ecrm:P90_has_value  : xsd:decimal  [1..1]</text></g></a><!--class ecrm:E52_Time-Span--><g id="elem_ecrm:E52_Time-Span"><rect fill="#F1F1F1" height="26.2969" id="uml_ecrm:E52_Time-Span" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="154" x="3715" y="217.5"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="148" x="3718" y="235.4951">ecrm:E52_Time-Span</text></g><!--class dto:PerceptionTypeRestriction--><a href="#dto:PerceptionTypeRestriction" target="_top" title="#dto:PerceptionTypeRestriction" xlink:actuate="onRequest" xlink:href="#dto:PerceptionTypeRestriction" xlink:show="new" xlink:title="#dto:PerceptionTypeRestriction" xlink:type="simple"><g id="elem_dto:PerceptionTypeRestriction"><rect codeline="21" fill="#F1F1F1" height="50.5938" id="uml_dto:PerceptionTypeRestriction" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="244" x="6062" y="205"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="211" x="6078.5" y="222.9951">dto:PerceptionTypeRestriction</text><line style="stroke:#181818;stroke-width:0.5;" x1="6063" x2="6305" y1="231.2969" y2="231.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="232" x="6068" y="248.292">skos:inScheme  = dtv:perception</text></g></a><!--class dto:TravelTypeRestriction--><a href="#dto:TravelTypeRestriction" target="_top" title="#dto:TravelTypeRestriction" xlink:actuate="onRequest" xlink:href="#dto:TravelTypeRestriction" xlink:show="new" xlink:title="#dto:TravelTypeRestriction" xlink:type="simple"><g id="elem_dto:TravelTypeRestriction"><rect codeline="25" fill="#F1F1F1" height="50.5938" id="uml_dto:TravelTypeRestriction" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="206" x="308" y="205"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="177" x="322.5" y="222.9951">dto:TravelTypeRestriction</text><line style="stroke:#181818;stroke-width:0.5;" x1="309" x2="513" y1="231.2969" y2="231.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="194" x="314" y="248.292">skos:inScheme  = dtv:travel</text></g></a><!--class dto:Perception_activeShape--><a href="#dto:Perception_activeShape" target="_top" title="#dto:Perception_activeShape" xlink:actuate="onRequest" xlink:href="#dto:Perception_activeShape" xlink:show="new" xlink:title="#dto:Perception_activeShape" xlink:type="simple"><g id="elem_dto:Perception_activeShape"><rect codeline="27" fill="#F1F1F1" height="50.5938" id="uml_dto:Perception_activeShape" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="343" x="5081.5" y="23"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="194" x="5156" y="40.9951">dto:Perception_activeShape</text><line style="stroke:#181818;stroke-width:0.5;" x1="5082.5" x2="5423.5" y1="49.2969" y2="49.2969"></line><ellipse cx="5092.5" cy="62.9453" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"></ellipse><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="317" x="5101.5" y="66.292">dto:phenomenon : ecrm:E1_CRM_Entity [1..1]</text></g></a><!--class dto:TravelShape--><a href="#dto:TravelShape" target="_top" title="#dto:TravelShape" xlink:actuate="onRequest" xlink:href="#dto:TravelShape" xlink:show="new" xlink:title="#dto:TravelShape" xlink:type="simple"><g id="elem_dto:TravelShape"><rect codeline="35" fill="#F1F1F1" height="50.5938" id="uml_dto:TravelShape" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="373" x="922.5" y="23"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="1052.5" y="40.9951">dto:TravelShape</text><line style="stroke:#181818;stroke-width:0.5;" x1="923.5" x2="1294.5" y1="49.2969" y2="49.2969"></line><ellipse cx="933.5" cy="62.9453" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"></ellipse><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="347" x="942.5" y="66.292">dto:vehicle : ecrm:E22_Human-Made_Object [0..1]</text></g></a><!--class dto:TransportationRestriction--><a href="#dto:TransportationRestriction" target="_top" title="#dto:TransportationRestriction" xlink:actuate="onRequest" xlink:href="#dto:TransportationRestriction" xlink:show="new" xlink:title="#dto:TransportationRestriction" xlink:type="simple"><g id="elem_dto:TransportationRestriction"><rect codeline="64" fill="#F1F1F1" height="50.5938" id="uml_dto:TransportationRestriction" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="266" x="7" y="205"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="203" x="38.5" y="222.9951">dto:TransportationRestriction</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="272" y1="231.2969" y2="231.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="254" x="13" y="248.292">skos:inScheme  = dtv:transportation</text></g></a><!--class dto:Exchange_currencyShape--><a href="#dto:Exchange_currencyShape" target="_top" title="#dto:Exchange_currencyShape" xlink:actuate="onRequest" xlink:href="#dto:Exchange_currencyShape" xlink:show="new" xlink:title="#dto:Exchange_currencyShape" xlink:type="simple"><g id="elem_dto:Exchange_currencyShape"><rect codeline="47" fill="#F1F1F1" height="83.1875" id="uml_dto:Exchange_currencyShape" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="285" x="3767.5" y="7"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="207" x="3806.5" y="24.9951">dto:Exchange_currencyShape</text><line style="stroke:#181818;stroke-width:0.5;" x1="3768.5" x2="4051.5" y1="33.2969" y2="33.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="273" x="3773.5" y="50.292">dto:exchange_rate  : xsd:decimal  [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="217" x="3773.5" y="66.5889">dto:sum_1  : xsd:decimal  [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="217" x="3773.5" y="82.8857">dto:sum_2  : xsd:decimal  [1..1]</text></g></a><!--class dto:CurrencyRestriction--><a href="#dto:CurrencyRestriction" target="_top" title="#dto:CurrencyRestriction" xlink:actuate="onRequest" xlink:href="#dto:CurrencyRestriction" xlink:show="new" xlink:title="#dto:CurrencyRestriction" xlink:type="simple"><g id="elem_dto:CurrencyRestriction"><rect codeline="62" fill="#F1F1F1" height="50.5938" id="uml_dto:CurrencyRestriction" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="229" x="4612.5" y="341"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="4645" y="358.9951">dto:CurrencyRestriction</text><line style="stroke:#181818;stroke-width:0.5;" x1="4613.5" x2="4840.5" y1="367.2969" y2="367.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="217" x="4618.5" y="384.292">skos:inScheme  = dtv:currency</text></g></a><!--link dto:DistanceDimensionShape to dto:MeasurementUnitRestriction--><g id="link_dto:DistanceDimensionShape_dto:MeasurementUnitRestriction"><path codeline="11" d="M748,264.118 C748,287.8731 748,313.2249 748,334.9469 " fill="none" id="dto:DistanceDimensionShape-to-dto:MeasurementUnitRestriction" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="748,340.9469,752,331.9469,748,335.9469,744,331.9469,748,340.9469" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="160" x="749" y="307.0669">ecrm:P91_has_unit&nbsp;[1..1]</text></g><!--link dto:Commercial_buyShape to ecrm:E53_Place--><g id="link_dto:Commercial_buyShape_ecrm:E53_Place"><path codeline="13" d="M2359.9636,57.0314 C2464.6189,67.7405 2624.1477,88.6004 2676,120 C2698.5074,133.6295 2691.9978,149.9045 2712,167 C2737.5626,188.8478 2766.3809,203.9337 2791.2287,214.9926 " fill="none" id="dto:Commercial_buyShape-to-ecrm:E53_Place" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="2796.7103,217.4323,2790.1143,210.1184,2792.1423,215.3992,2786.8614,217.4272,2796.7103,217.4323" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="187" x="2713" y="148.0669">ecrm:P7_took_place_at&nbsp;[0..1]</text></g><!--link dto:Commercial_buyShape to ecrm:E19_Physical_Object--><g id="link_dto:Commercial_buyShape_ecrm:E19_Physical_Object"><path codeline="14" d="M2168.3233,53.8925 C1929.3856,67.5711 1322.7095,103.6876 1282,120 C1251.521,132.213 1253.0779,149.9779 1225,167 C1189.4522,188.5507 1150.9165,204.2612 1119.7369,215.46 " fill="none" id="dto:Commercial_buyShape-to-ecrm:E19_Physical_Object" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="1114.0901,217.4882,1123.9124,218.2105,1118.7958,215.7981,1121.2082,210.6814,1114.0901,217.4882" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="102" x="1283" y="148.0669">dto:goods&nbsp;[1..1]</text></g><!--link dto:Commercial_buyShape to efrbroo:F23_Expression_Fragment--><g id="link_dto:Commercial_buyShape_efrbroo:F23_Expression_Fragment"><path codeline="15" d="M2168.2799,57.0208 C2042.267,69.2215 1833.9206,93.178 1811,120 C1764.6915,174.191 1854.5594,202.0048 1939.8024,216.4618 " fill="none" id="dto:Commercial_buyShape-to-efrbroo:F23_Expression_Fragment" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="1945.7179,217.4651,1937.5134,212.0165,1940.7883,216.6291,1936.1758,219.9039,1945.7179,217.4651" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="225" x="1812" y="148.0669">ecrm:P70i_is_documented_in&nbsp;[1..1]</text></g><!--link dto:Commercial_buyShape to ecrm:E21_Person--><g id="link_dto:Commercial_buyShape_ecrm:E21_Person"><path codeline="16" d="M2359.5541,50.9892 C2782.3782,62.0752 4465.3114,106.9794 4489,120 C4511.1459,132.1727 4503.97,148.3293 4521,167 C4538.8657,186.5869 4558.0351,201.904 4574.4671,213.9066 " fill="none" id="dto:Commercial_buyShape-to-ecrm:E21_Person" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="4579.3122,217.4457,4574.4039,208.907,4575.2746,214.4965,4569.6852,215.3672,4579.3122,217.4457" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="99" x="4522" y="148.0669">dto:buyer&nbsp;[1..1]</text></g><!--link dto:Commercial_buyShape to ecrm:E39_Actor--><g id="link_dto:Commercial_buyShape_ecrm:E39_Actor"><path codeline="17" d="M2168.4717,53.0105 C1949.9812,63.7877 1430.5708,92.2124 1405,120 C1390.8552,135.3711 1392.2646,150.4424 1405,167 C1436.6798,208.1878 1468.9666,179.802 1518,197 C1534.6002,202.8224 1547.1967,208.177 1561.5327,214.8324 " fill="none" id="dto:Commercial_buyShape-to-ecrm:E39_Actor" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="1566.9748,217.3589,1560.4959,209.9411,1562.4397,215.2535,1557.1273,217.1973,1566.9748,217.3589" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="97" x="1406" y="148.0669">dto:seller&nbsp;[0..1]</text></g><!--link dto:Commercial_buyShape to ecrm:E7_Activity--><g id="link_dto:Commercial_buyShape_ecrm:E7_Activity"><path codeline="18" d="M2359.6124,51.3361 C2595.6483,58.3014 3224.9632,76.6522 3750,90 C3822.7178,91.8487 4995.093,85.2552 5059,120 C5081.2018,132.0706 5070.1149,152.7722 5091,167 C5126.4275,191.1347 5234.7134,210.6053 5305.8548,221.3737 " fill="none" id="dto:Commercial_buyShape-to-ecrm:E7_Activity" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="5311.7872,222.2717,5303.4872,216.9698,5306.8435,221.5234,5302.2899,224.8797,5311.7872,222.2717" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="231" x="5092" y="140.5669">ecrm:P183i_starts_after_the_end_of</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="190" x="5092" y="155.6997">ecrm:P9i_forms_part_of&nbsp;[0..1]</text></g><!--link dto:Commercial_buyShape to dto:MoneyDimensionShape--><g id="link_dto:Commercial_buyShape_dto:MoneyDimensionShape"><path codeline="19" d="M2168.3036,54.5649 C2035.1021,62.9361 1786.2433,78.3204 1574,90 C1540.62,91.8369 996.0421,95.779 973,120 C958.6022,135.1344 959.298,151.2329 973,167 C1004.3546,203.0802 1138.8847,188.9352 1186,197 C1191.6509,197.9673 1191.4996,197.9155 1197.3067,198.964 " fill="none" id="dto:Commercial_buyShape-to-dto:MoneyDimensionShape" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="1203.2112,200.0301,1195.0651,194.4946,1198.2908,199.1417,1193.6437,202.3673,1203.2112,200.0301" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="107" x="974" y="148.0669">dto:money&nbsp;[1..1]</text></g><!--link dto:Commercial_buyShape to ecrm:E52_Time-Span--><g id="link_dto:Commercial_buyShape_ecrm:E52_Time-Span"><path codeline="20" d="M2359.5027,51.1535 C2661.702,59.8541 3580.4767,88.7563 3636,120 C3658.0235,132.3929 3649.0539,150.2769 3668,167 C3693.7489,189.7278 3723.5236,204.5269 3749.8885,215.2066 " fill="none" id="dto:Commercial_buyShape-to-ecrm:E52_Time-Span" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="3755.4496,217.4592,3748.6097,210.3729,3750.8154,215.582,3745.6062,217.7876,3755.4496,217.4592" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="193" x="3669" y="148.0669">ecrm:P4_has_time-span&nbsp;[0..1]</text></g><!--link dto:Perception_activeShape to dto:PerceptionTypeRestriction--><g id="link_dto:Perception_activeShape_dto:PerceptionTypeRestriction"><path codeline="29" d="M5424.8633,56.2632 C5652.3396,67.5993 6031.4972,90.5732 6089,120 C6125.71,138.7862 6151.093,173.3059 6166.938,199.6429 " fill="none" id="dto:Perception_activeShape-to-dto:PerceptionTypeRestriction" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="6170.0311,204.7842,6168.8189,195.0102,6167.4535,200.4998,6161.9639,199.1344,6170.0311,204.7842" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="156" x="6143" y="148.0669">ecrm:P2_has_type&nbsp;[0..1]</text></g><!--link dto:Perception_activeShape to ecrm:E7_Activity--><g id="link_dto:Perception_activeShape_ecrm:E7_Activity"><path codeline="30" d="M5424.7517,58.0674 C5587.4033,68.9282 5810.7663,89.2351 5838,120 C5851.8457,135.641 5851.7396,151.2657 5838,167 C5811.528,197.3151 5555.8865,218.1303 5436.1996,226.3315 " fill="none" id="dto:Perception_activeShape-to-ecrm:E7_Activity" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="5430.2136,226.7417,5439.466,230.1171,5435.2019,226.3999,5438.9191,222.1358,5430.2136,226.7417" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="231" x="5849" y="140.5669">ecrm:P183i_starts_after_the_end_of</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="190" x="5849" y="155.6997">ecrm:P9i_forms_part_of&nbsp;[0..1]</text></g><!--link dto:Perception_activeShape to efrbroo:F23_Expression_Fragment--><g id="link_dto:Perception_activeShape_efrbroo:F23_Expression_Fragment"><path codeline="31" d="M5081.0896,54.6327 C4850.8695,62.8221 4429.6869,77.7228 4070,90 C4019.7794,91.7142 3210.0234,95.7721 3166,120 C3143.8605,132.1843 3155.981,154.532 3134,167 C3113.4504,178.6561 2461.9766,211.1093 2184.5653,224.4478 " fill="none" id="dto:Perception_activeShape-to-efrbroo:F23_Expression_Fragment" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="2178.5722,224.736,2187.7539,228.2991,2183.5664,224.4959,2187.3697,220.3084,2178.5722,224.736" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="225" x="3167" y="148.0669">ecrm:P70i_is_documented_in&nbsp;[1..1]</text></g><!--link dto:Perception_activeShape to ecrm:E53_Place--><g id="link_dto:Perception_activeShape_ecrm:E53_Place"><path codeline="32" d="M5081.302,52.8105 C4790.6337,61.1053 4224.9761,81.9244 4142,120 C4115.4346,132.1902 4122.6512,154.9986 4096,167 C4068.1049,179.5615 3139.6909,217.9297 2893.7983,227.8921 " fill="none" id="dto:Perception_activeShape-to-ecrm:E53_Place" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="2887.8032,228.135,2896.9578,231.7674,2892.7991,227.9326,2896.6339,223.7739,2887.8032,228.135" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="187" x="4143" y="148.0669">ecrm:P7_took_place_at&nbsp;[0..1]</text></g><!--link dto:Perception_activeShape to ecrm:E21_Person--><g id="link_dto:Perception_activeShape_ecrm:E21_Person"><path codeline="33" d="M5424.9496,63.0033 C5502.1702,73.4354 5581.2732,90.9691 5605,120 C5618.2191,136.1741 5619.2983,151.7716 5605,167 C5588.8034,184.2501 4888.2207,217.3604 4668.4986,227.3413 " fill="none" id="dto:Perception_activeShape-to-ecrm:E21_Person" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="4662.5048,227.6136,4671.677,231.2011,4667.4996,227.3867,4671.314,223.2093,4662.5048,227.6136" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="184" x="5616" y="148.0669">dto:perceiver_agentive&nbsp;[1..1]</text></g><!--link dto:Perception_activeShape to ecrm:E52_Time-Span--><g id="link_dto:Perception_activeShape_ecrm:E52_Time-Span"><path codeline="34" d="M5081.3729,71.3081 C4994.6554,84.5049 4899.5822,102.0229 4860,120 C4829.4753,133.8635 4832.2837,154.9467 4801,167 C4757.7252,183.6733 4104.0171,215.8212 3875.3385,226.621 " fill="none" id="dto:Perception_activeShape-to-ecrm:E52_Time-Span" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="3869.3452,226.904,3878.5239,230.475,3874.3396,226.6681,3878.1465,222.4839,3869.3452,226.904" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="193" x="4861" y="148.0669">ecrm:P4_has_time-span&nbsp;[0..1]</text></g><!--link dto:TravelShape to ecrm:E53_Place--><g id="link_dto:TravelShape_ecrm:E53_Place"><path codeline="37" d="M1295.7921,55.7588 C1674.9687,70.7828 2501.5107,105.1241 2528,120 C2550.0341,132.374 2539.1777,152.6804 2560,167 C2593.706,190.1798 2695.9139,209.6913 2764.3821,220.7795 " fill="none" id="dto:TravelShape-to-ecrm:E53_Place" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="2770.3049,221.7387,2762.0601,216.3514,2765.3692,220.9394,2760.7812,224.2485,2770.3049,221.7387" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="90" x="2561" y="133.0669">dto:goal&nbsp;[1..1]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="2561" y="148.1997">dto:path&nbsp;[0..1]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="106" x="2561" y="163.3325">dto:source&nbsp;[1..1]</text></g><!--link dto:TravelShape to dto:TransportationRestriction--><g id="link_dto:TravelShape_dto:TransportationRestriction"><path codeline="38" d="M922.2691,56.1786 C683.4848,67.163 293.5719,89.4601 234,120 C197.4672,138.7287 172.4056,173.243 156.7966,199.5989 " fill="none" id="dto:TravelShape-to-dto:TransportationRestriction" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="153.7391,204.7614,161.767,199.0559,156.287,200.4593,154.8836,194.9793,153.7391,204.7614" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="217" x="235" y="148.0669">dto:mode_of_transportation&nbsp;[0..1]</text></g><!--link dto:TravelShape to ecrm:E19_Physical_Object--><g id="link_dto:TravelShape_ecrm:E19_Physical_Object"><path codeline="39" d="M943.9105,74.0564 C894.35,85.3094 849.0878,100.4877 834,120 C821.2222,136.5249 820.9956,150.6528 834,167 C870.915,213.404 906.696,181.7587 964,197 C987.3436,203.2088 1007.4621,209.1786 1028.338,215.6596 " fill="none" id="dto:TravelShape-to-ecrm:E19_Physical_Object" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="1034.0682,217.4386,1026.6589,210.95,1029.293,215.9561,1024.2869,218.5903,1034.0682,217.4386" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="81" x="835" y="148.0669">dto:baggage</text></g><!--link dto:TravelShape to ecrm:E21_Person--><g id="link_dto:TravelShape_ecrm:E21_Person"><path codeline="40" d="M1295.7704,57.407 C1504.2568,67.0074 1851.7021,81.9856 2151,90 C2211.6506,91.6241 4281.5638,91.2649 4335,120 C4357.2569,131.9686 4346.4422,152.3033 4367,167 C4416.1452,202.1336 4477.946,216.9976 4527.3601,224.0126 " fill="none" id="dto:TravelShape-to-ecrm:E21_Person" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="4533.3005,224.8559,4524.9521,219.6306,4528.3501,224.1531,4523.8276,227.5512,4533.3005,224.8559" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="112" x="4368" y="148.0669">dto:traveler&nbsp;[1..1]</text></g><!--link dto:TravelShape to ecrm:E39_Actor--><g id="link_dto:TravelShape_ecrm:E39_Actor"><path codeline="41" d="M1099.0563,74.3278 C1090.62,101.1102 1083.1579,142.4342 1106,167 C1137.2548,200.6133 1473.4598,185.9147 1518,197 C1536.1903,201.5273 1550.143,207.4019 1564.7488,214.7393 " fill="none" id="dto:TravelShape-to-ecrm:E39_Actor" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="1570.1103,217.4327,1563.8637,209.8183,1565.6424,215.1882,1560.2725,216.9669,1570.1103,217.4327" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="113" x="1107" y="148.0669">dto:co-participant</text></g><!--link dto:TravelShape to dto:DistanceDimensionShape--><g id="link_dto:TravelShape_dto:DistanceDimensionShape"><path codeline="42" d="M922.3541,57.879 C827.7088,66.9595 726.5919,84.8303 697,120 C677.9556,142.6341 691.168,168.9375 710.519,192.3165 " fill="none" id="dto:TravelShape-to-dto:DistanceDimensionShape" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="714.3447,196.9386,711.6875,187.455,711.1566,193.0869,705.5247,192.556,714.3447,196.9386" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="117" x="698" y="148.0669">dto:distance&nbsp;[0..1]</text></g><!--link dto:TravelShape to dto:TravelTypeRestriction--><g id="link_dto:TravelShape_dto:TravelTypeRestriction"><path codeline="43" d="M922.4075,58.0667 C777.7334,67.9066 590.6818,86.6385 522,120 C482.3765,139.2467 452.0468,173.5808 432.4754,199.7275 " fill="none" id="dto:TravelShape-to-dto:TravelTypeRestriction" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="428.8799,204.5309,437.4754,199.7228,431.8761,200.5281,431.0708,194.9288,428.8799,204.5309" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="156" x="523" y="148.0669">ecrm:P2_has_type&nbsp;[0..1]</text></g><!--link dto:TravelShape to efrbroo:F23_Expression_Fragment--><g id="link_dto:TravelShape_efrbroo:F23_Expression_Fragment"><path codeline="44" d="M1295.6634,72.4178 C1380.3436,85.1955 1469.9566,101.9865 1508,120 C1537.0608,133.7602 1533.6077,153.9628 1563,167 C1627.6175,195.6616 1805.2162,213.1697 1929.4467,222.4013 " fill="none" id="dto:TravelShape-to-efrbroo:F23_Expression_Fragment" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="1935.4302,222.8459,1926.7514,218.1899,1930.4439,222.4754,1926.1585,226.1679,1935.4302,222.8459" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="225" x="1564" y="148.0669">ecrm:P70i_is_documented_in&nbsp;[1..1]</text></g><!--link dto:TravelShape to ecrm:E52_Time-Span--><g id="link_dto:TravelShape_ecrm:E52_Time-Span"><path codeline="45" d="M1295.7873,56.8298 C1504.2887,65.9204 1851.7472,80.4504 2151,90 C2220.4291,92.2156 3339.9899,86.7874 3401,120 C3423.1952,132.0826 3411.7799,153.2769 3433,167 C3478.5082,196.4303 3617.8085,214.3119 3709.0065,223.3165 " fill="none" id="dto:TravelShape-to-ecrm:E52_Time-Span" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="3714.9775,223.9061,3706.4141,219.0411,3710.0017,223.4148,3705.628,227.0024,3714.9775,223.9061" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="193" x="3434" y="148.0669">ecrm:P4_has_time-span&nbsp;[0..1]</text></g><!--link dto:TravelShape to dto:TravelShape--><g id="link_dto:TravelShape_dto:TravelShape"><path codeline="46" d="M1295.6396,33.5644 C1316.7914,36.3613 1330.5,41.3398 1330.5,48.5 C1330.5,55.6602 1322.7396,59.8522 1301.5878,62.6491 " fill="none" id="dto:TravelShape-to-dto:TravelShape" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="1295.6396,63.4356,1305.0863,66.2213,1300.5965,62.7802,1304.0376,58.2903,1295.6396,63.4356" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="177" x="1336.5" y="38.0669">ecrm:P134_continued&nbsp;[0..1]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="231" x="1336.5" y="53.1997">ecrm:P183i_starts_after_the_end_of</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="190" x="1336.5" y="68.3325">ecrm:P9i_forms_part_of&nbsp;[0..1]</text></g><!--link dto:Exchange_currencyShape to ecrm:E21_Person--><g id="link_dto:Exchange_currencyShape_ecrm:E21_Person"><path codeline="51" d="M4052.6609,52.5851 C4251.5137,59.7741 4592.0559,78.1012 4630,120 C4655.2044,147.8313 4629.7521,189.5939 4612.5291,212.3585 " fill="none" id="dto:Exchange_currencyShape-to-ecrm:E21_Person" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="4608.909,217.1434,4617.529,212.3795,4611.9257,213.156,4611.1492,207.5527,4608.909,217.1434" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="152" x="4640" y="148.0669">dto:money_owner&nbsp;[1..1]</text></g><!--link dto:Exchange_currencyShape to ecrm:E53_Place--><g id="link_dto:Exchange_currencyShape_ecrm:E53_Place"><path codeline="52" d="M3767.0295,52.6141 C3515.0652,60.809 3011.7712,81.7585 2941,120 C2917.8509,132.5087 2923.2072,148.0041 2905,167 C2886.6779,186.1158 2867.6752,201.5833 2851.6334,213.766 " fill="none" id="dto:Exchange_currencyShape-to-ecrm:E53_Place" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="2846.8551,217.3948,2856.4417,215.1371,2850.837,214.3708,2851.6033,208.7661,2846.8551,217.3948" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="187" x="2942" y="148.0669">ecrm:P7_took_place_at&nbsp;[0..1]</text></g><!--link dto:Exchange_currencyShape to ecrm:E39_Actor--><g id="link_dto:Exchange_currencyShape_ecrm:E39_Actor"><path codeline="53" d="M3767.331,52.3466 C3342.183,64.0291 2110.9159,99.5451 2074,120 C2051.8956,132.2479 2063.4521,153.6425 2042,167 C2009.4496,187.2681 1771.9182,212.9625 1658.183,224.2984 " fill="none" id="dto:Exchange_currencyShape-to-ecrm:E39_Actor" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="1652.2126,224.8935,1661.5649,227.9812,1657.1879,224.3976,1660.7715,220.0206,1652.2126,224.8935" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="177" x="2075" y="148.0669">dto:exchange_service&nbsp;[0..1]</text></g><!--link dto:Exchange_currencyShape to ecrm:E52_Time-Span--><g id="link_dto:Exchange_currencyShape_ecrm:E52_Time-Span"><path codeline="54" d="M3902.4755,90.0987 C3896.689,114.123 3886.9103,144.0332 3871,167 C3856.2697,188.2633 3837.4625,202.8121 3819.813,214.0993 " fill="none" id="dto:Exchange_currencyShape-to-ecrm:E52_Time-Span" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="3814.7583,217.3319,3824.4955,215.8528,3818.9706,214.6381,3820.1853,209.1132,3814.7583,217.3319" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="193" x="3894" y="148.0669">ecrm:P4_has_time-span&nbsp;[0..1]</text></g><!--link dto:Exchange_currencyShape to dto:CurrencyRestriction--><g id="link_dto:Exchange_currencyShape_dto:CurrencyRestriction"><path codeline="55" d="M4052.7994,53.5532 C4493.8584,69.2013 5805.1928,116.0467 5809,120 C5947.9898,264.3214 5152.8164,336.4154 4847.4959,358.5395 " fill="none" id="dto:Exchange_currencyShape-to-dto:CurrencyRestriction" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="4841.5116,358.9731,4850.7772,362.3122,4846.4985,358.6117,4850.199,354.3331,4841.5116,358.9731" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="168" x="5789" y="227.5669">dto:source_currency&nbsp;[1..1]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="164" x="5789" y="242.6997">dto:target_currency&nbsp;[1..1]</text></g><!--link dto:Exchange_currencyShape to ecrm:E7_Activity--><g id="link_dto:Exchange_currencyShape_ecrm:E7_Activity"><path codeline="56" d="M4052.8243,53.5923 C4408.3859,66.5428 5306.5902,101.0469 5332,120 C5363.1466,143.2322 5369.2178,187.316 5370.4495,211.2474 " fill="none" id="dto:Exchange_currencyShape-to-ecrm:E7_Activity" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="5370.7579,217.2395,5374.29,208.0458,5370.5009,212.2461,5366.3006,208.457,5370.7579,217.2395" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="231" x="5362" y="140.5669">ecrm:P183i_starts_after_the_end_of</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="190" x="5362" y="155.6997">ecrm:P9i_forms_part_of&nbsp;[0..1]</text></g><!--link dto:Exchange_currencyShape to efrbroo:F23_Expression_Fragment--><g id="link_dto:Exchange_currencyShape_efrbroo:F23_Expression_Fragment"><path codeline="57" d="M3767.1596,51.3533 C3383.785,59.472 2356.7937,84.4325 2293,120 C2270.9279,132.3061 2281.3088,151.961 2261,167 C2226.1975,192.7718 2186.5506,206.8718 2147.3619,216.0786 " fill="none" id="dto:Exchange_currencyShape-to-efrbroo:F23_Expression_Fragment" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="2141.5209,217.4508,2151.1972,219.2864,2146.3884,216.3073,2149.3675,211.4984,2141.5209,217.4508" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="225" x="2294" y="148.0669">ecrm:P70i_is_documented_in&nbsp;[1..1]</text></g><!--link dto:MoneyDimensionShape to dto:CurrencyRestriction--><g id="link_dto:MoneyDimensionShape_dto:CurrencyRestriction"><path codeline="61" d="M1500.6705,261.6247 C1506.8496,262.5059 1512.978,263.3047 1519,264 C2136.5552,335.306 4108.5847,360.1158 4606.4294,365.3281 " fill="none" id="dto:MoneyDimensionShape-to-dto:CurrencyRestriction" style="stroke:#800000;stroke-width:1.0;"></path><polygon fill="#800000" points="4612.4291,365.3909,4603.4715,361.2969,4607.4294,365.3386,4603.3877,369.2965,4612.4291,365.3909" style="stroke:#800000;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="160" x="2201" y="307.0669">ecrm:P91_has_unit&nbsp;[1..1]</text></g><!--SRC=[lLXHRziu37xlhz1jZqE7EEcmQx0DABfqEs3TYgR3FNI5eCfChAij6PASDlVhZx8JnuubDydrxYqHoOyKnO-YRC0IoJ8mEUCmXPnfPfKcKaauCWz2keMCy9GPSw6adOg_WKGdHx_5C1CIoBS_ldoz-N5zzltBfAckiXm1KDqkKo15bWuRqaVDyaimXitXJn7RX4I3GKDyfhLwF5SfHl7waccbv9491qcEpbriv5LirVYpC9P93fz51j889QS9o-4LkRrz7HRVtP6ZNkin0QwpyTM89inGgImGNDFnp8o_2GkQfOJS3jw-ZUx8ZaYdWn9gmTAYn7eoyLX82tFG1FVb_iR0HLOYHxiW7nz_gb9m2SmK6b1gVqfXhy5OBRX5pORxg7HVeFp3ppU3mTdWK-sbaSrpbMMWkM0flI-MxLHwP7KUlNPbWANxoRiHlKhn83S1lQTMgGUQkrNADa6raleSR7HAhvAb4HmLVjp_1Tmw1yvohbHiEZjz3dIcxx7unXV34PqyvHeB5fD8BpIRk-GsWXy8AWoD5I-S068gvDxEoXqC8te5sbH7vGnG2_HXMADJUiQH96ie0sdQmDehi-yTb5W8kzpiElfz92ZMehQ6iXcoWDe4ACYOgXdvbQuAJT2PqfcXo5YBWdtTbmMD95zsYUH4cHCTbfvtGtg3cCVJd3M8SLBomZe1jXhP2RT13Zme3hdZrSqoXnRDLXG9QjH4wS4O4_EW33Q5AK-Gp8Hyn1qlndbjqOwcZ_MhSC8gTJpzlSCRaEiXxL1kD5j06agALre74B0D-BQbTkXOA7Cr2-ssvHTx3gHjFIPld3XFG2hC3cP_LJ6JY9vVNzA9j4YEhLOT0gihk_Vugu8SLWM9OZzrUdtyB-JjZ-3bU-WEEpxmVja1kTEWIpwYggOup4XdT7ZK_xOZLUHfrtjZROjaxSfUG28uJchhiXuEwTSYO_BuaiMmkastPfmMJ23xrUNBqksa_4hBv36RR6-eaXXLOBxygUpwNQrAaojjcKlo5fUgkm8tecRKjXJzbH3QMdZ2k6VpELR0C_QTygawMEYA3y5iN-rS7JkA2YwmGcnlciA3gPF6A-ckMUbjsRirCCyUNxvd14lr8CezcuojOJyQdL2EJoSX2uYxzVwI7RdH3IPFF65o3fGNMeFaM_ExNrptY91rLIUmbk8ph7w_R1uihKJr8vaYer4N8TeFONWWGXyrozcIgaSPOkSEe0TUH3iWRxU0-aGCw8K8CNYNa0-dH2zwEPElrZtTkMhujQN_la1spC46bNRUutyy4VL7yABThVa2y3sJrgD_LxQP-VtFgts_UFJ2-3vt1AZgnNckWlRxgk73M7_LwCesNpNylhqla_N9TmQqq8oo6TVy6itXBJpdX5v93GkCA14n42uqpdlLxmniec9J_O4invTC1jazjiD_0000]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/lLXHRziu37xlhz1jZqE7EEcmQx0DABfqEs3TYgR3FNI5eCfChAij6PASDlVhZx8JnuubDydrxYqHoOyKnO-YRC0IoJ8mEUCmXPnfPfKcKaauCWz2keMCy9GPSw6adOg_WKGdHx_5C1CIoBS_ldoz-N5zzltBfAckiXm1KDqkKo15bWuRqaVDyaimXitXJn7RX4I3GKDyfhLwF5SfHl7waccbv9491qcEpbriv5LirVYpC9P93fz51j889QS9o-4LkRrz7HRVtP6ZNkin0QwpyTM89inGgImGNDFnp8o_2GkQfOJS3jw-ZUx8ZaYdWn9gmTAYn7eoyLX82tFG1FVb_iR0HLOYHxiW7nz_gb9m2SmK6b1gVqfXhy5OBRX5pORxg7HVeFp3ppU3mTdWK-sbaSrpbMMWkM0flI-MxLHwP7KUlNPbWANxoRiHlKhn83S1lQTMgGUQkrNADa6raleSR7HAhvAb4HmLVjp_1Tmw1yvohbHiEZjz3dIcxx7unXV34PqyvHeB5fD8BpIRk-GsWXy8AWoD5I-S068gvDxEoXqC8te5sbH7vGnG2_HXMADJUiQH96ie0sdQmDehi-yTb5W8kzpiElfz92ZMehQ6iXcoWDe4ACYOgXdvbQuAJT2PqfcXo5YBWdtTbmMD95zsYUH4cHCTbfvtGtg3cCVJd3M8SLBomZe1jXhP2RT13Zme3hdZrSqoXnRDLXG9QjH4wS4O4_EW33Q5AK-Gp8Hyn1qlndbjqOwcZ_MhSC8gTJpzlSCRaEiXxL1kD5j06agALre74B0D-BQbTkXOA7Cr2-ssvHTx3gHjFIPld3XFG2hC3cP_LJ6JY9vVNzA9j4YEhLOT0gihk_Vugu8SLWM9OZzrUdtyB-JjZ-3bU-WEEpxmVja1kTEWIpwYggOup4XdT7ZK_xOZLUHfrtjZROjaxSfUG28uJchhiXuEwTSYO_BuaiMmkastPfmMJ23xrUNBqksa_4hBv36RR6-eaXXLOBxygUpwNQrAaojjcKlo5fUgkm8tecRKjXJzbH3QMdZ2k6VpELR0C_QTygawMEYA3y5iN-rS7JkA2YwmGcnlciA3gPF6A-ckMUbjsRirCCyUNxvd14lr8CezcuojOJyQdL2EJoSX2uYxzVwI7RdH3IPFF65o3fGNMeFaM_ExNrptY91rLIUmbk8ph7w_R1uihKJr8vaYer4N8TeFONWWGXyrozcIgaSPOkSEe0TUH3iWRxU0-aGCw8K8CNYNa0-dH2zwEPElrZtTkMhujQN_la1spC46bNRUutyy4VL7yABThVa2y3sJrgD_LxQP-VtFgts_UFJ2-3vt1AZgnNckWlRxgk73M7_LwCesNpNylhqla_N9TmQqq8oo6TVy6itXBJpdX5v93GkCA14n42uqpdlLxmniec9J_O4invTC1jazjiD_0000" target="_blank">View as PNG</a></small>
+                  <!--@startuml
+set namespaceSeparator none
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 100
+skinparam ArrowColor #Maroon
+set namespaceSeparator none 
+Class "dto:DistanceDimensionShape" [[#dto:DistanceDimensionShape]] 
+"dto:DistanceDimensionShape" : ecrm:P3_has_note  : rdfs:Literal  [0..1]  
+"dto:DistanceDimensionShape" : ecrm:P90_has_value  : xsd:integer or xsd:decimal  [1..1]  
+"dto:DistanceDimensionShape" - -> "dto:MeasurementUnitRestriction" : ecrm:P91_has_unit<U+00A0>[1..1]  
+Class "dto:Commercial_buyShape" [[#dto:Commercial_buyShape]] 
+"dto:Commercial_buyShape" - -> "ecrm:E53_Place" : ecrm:P7_took_place_at<U+00A0>[0..1]  
+"dto:Commercial_buyShape" - -> "ecrm:E19_Physical_Object" : dto:goods<U+00A0>[1..1]  
+"dto:Commercial_buyShape" - -> "efrbroo:F23_Expression_Fragment" : ecrm:P70i_is_documented_in<U+00A0>[1..1]  
+"dto:Commercial_buyShape" - -> "ecrm:E21_Person" : dto:buyer<U+00A0>[1..1]  
+"dto:Commercial_buyShape" - -> "ecrm:E39_Actor" : dto:seller<U+00A0>[0..1]  
+"dto:Commercial_buyShape" - -> "ecrm:E7_Activity" : ecrm:P183i_starts_after_the_end_of \lecrm:P9i_forms_part_of<U+00A0>[0..1]  
+"dto:Commercial_buyShape" - -> "dto:MoneyDimensionShape" : dto:money<U+00A0>[1..1]  
+"dto:Commercial_buyShape" - -> "ecrm:E52_Time-Span" : ecrm:P4_has_time-span<U+00A0>[0..1]  
+Class "dto:PerceptionTypeRestriction" [[#dto:PerceptionTypeRestriction]] 
+"dto:PerceptionTypeRestriction" : skos:inScheme  = dtv:perception  
+Class "dto:MeasurementUnitRestriction" [[#dto:MeasurementUnitRestriction]] 
+"dto:MeasurementUnitRestriction" : skos:inScheme  = dtv:unit  
+Class "dto:TravelTypeRestriction" [[#dto:TravelTypeRestriction]] 
+"dto:TravelTypeRestriction" : skos:inScheme  = dtv:travel  
+Class "dto:Perception_activeShape" [[#dto:Perception_activeShape]] 
+"dto:Perception_activeShape" : +dto:phenomenon : ecrm:E1_CRM_Entity [1..1]  
+"dto:Perception_activeShape" - -> "dto:PerceptionTypeRestriction" : ecrm:P2_has_type<U+00A0>[0..1]  
+"dto:Perception_activeShape" - -> "ecrm:E7_Activity" : ecrm:P183i_starts_after_the_end_of \lecrm:P9i_forms_part_of<U+00A0>[0..1]  
+"dto:Perception_activeShape" - -> "efrbroo:F23_Expression_Fragment" : ecrm:P70i_is_documented_in<U+00A0>[1..1]  
+"dto:Perception_activeShape" - -> "ecrm:E53_Place" : ecrm:P7_took_place_at<U+00A0>[0..1]  
+"dto:Perception_activeShape" - -> "ecrm:E21_Person" : dto:perceiver_agentive<U+00A0>[1..1]  
+"dto:Perception_activeShape" - -> "ecrm:E52_Time-Span" : ecrm:P4_has_time-span<U+00A0>[0..1]  
+Class "dto:TravelShape" [[#dto:TravelShape]] 
+"dto:TravelShape" : +dto:vehicle : ecrm:E22_Human-Made_Object [0..1]  
+"dto:TravelShape" - -> "ecrm:E53_Place" : dto:goal<U+00A0>[1..1]  \ldto:path<U+00A0>[0..1]  \ldto:source<U+00A0>[1..1]  
+"dto:TravelShape" - -> "dto:TransportationRestriction" : dto:mode_of_transportation<U+00A0>[0..1]  
+"dto:TravelShape" - -> "ecrm:E19_Physical_Object" : dto:baggage 
+"dto:TravelShape" - -> "ecrm:E21_Person" : dto:traveler<U+00A0>[1..1]  
+"dto:TravelShape" - -> "ecrm:E39_Actor" : dto:co-participant 
+"dto:TravelShape" - -> "dto:DistanceDimensionShape" : dto:distance<U+00A0>[0..1]  
+"dto:TravelShape" - -> "dto:TravelTypeRestriction" : ecrm:P2_has_type<U+00A0>[0..1]  
+"dto:TravelShape" - -> "efrbroo:F23_Expression_Fragment" : ecrm:P70i_is_documented_in<U+00A0>[1..1]  
+"dto:TravelShape" - -> "ecrm:E52_Time-Span" : ecrm:P4_has_time-span<U+00A0>[0..1]  
+"dto:TravelShape" - -> "dto:TravelShape" : ecrm:P134_continued<U+00A0>[0..1]  \lecrm:P183i_starts_after_the_end_of \lecrm:P9i_forms_part_of<U+00A0>[0..1]  
+Class "dto:Exchange_currencyShape" [[#dto:Exchange_currencyShape]] 
+"dto:Exchange_currencyShape" : dto:exchange_rate  : xsd:decimal  [0..1]  
+"dto:Exchange_currencyShape" : dto:sum_1  : xsd:decimal  [1..1]  
+"dto:Exchange_currencyShape" : dto:sum_2  : xsd:decimal  [1..1]  
+"dto:Exchange_currencyShape" - -> "ecrm:E21_Person" : dto:money_owner<U+00A0>[1..1]  
+"dto:Exchange_currencyShape" - -> "ecrm:E53_Place" : ecrm:P7_took_place_at<U+00A0>[0..1]  
+"dto:Exchange_currencyShape" - -> "ecrm:E39_Actor" : dto:exchange_service<U+00A0>[0..1]  
+"dto:Exchange_currencyShape" - -> "ecrm:E52_Time-Span" : ecrm:P4_has_time-span<U+00A0>[0..1]  
+"dto:Exchange_currencyShape" - -> "dto:CurrencyRestriction" : dto:source_currency<U+00A0>[1..1]  \ldto:target_currency<U+00A0>[1..1]  
+"dto:Exchange_currencyShape" - -> "ecrm:E7_Activity" : ecrm:P183i_starts_after_the_end_of \lecrm:P9i_forms_part_of<U+00A0>[0..1]  
+"dto:Exchange_currencyShape" - -> "efrbroo:F23_Expression_Fragment" : ecrm:P70i_is_documented_in<U+00A0>[1..1]  
+Class "dto:MoneyDimensionShape" [[#dto:MoneyDimensionShape]] 
+"dto:MoneyDimensionShape" : ecrm:P3_has_note  : rdfs:Literal  [0..1]  
+"dto:MoneyDimensionShape" : ecrm:P90_has_value  : xsd:decimal  [1..1]  
+"dto:MoneyDimensionShape" - -> "dto:CurrencyRestriction" : ecrm:P91_has_unit<U+00A0>[1..1]  
+Class "dto:CurrencyRestriction" [[#dto:CurrencyRestriction]] 
+"dto:CurrencyRestriction" : skos:inScheme  = dtv:currency  
+Class "dto:TransportationRestriction" [[#dto:TransportationRestriction]] 
+"dto:TransportationRestriction" : skos:inScheme  = dtv:transportation  
+hide circle
+hide methods
+hide empty members
+@enduml
+--></section>
+            </div>
+         </div>
+         <h2 id="documentation" class="sp_section_subtitle"><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#documentation" style="position: absolute; margin-left: -1.25em; padding-right: 0.25em; padding-left: 0.25em;"></a>Model documentation</h2>
+         <div class="row mt-3">
+            <div class="col">
+               <section id="dto:CurrencyRestriction">
+                  <div class="sp_section_title_table_wrapper">
+                     <h3 class="sp_section_title_table" id="currency-restriction"><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#currency-restriction" style="position: absolute; margin-left: -1.25em; padding-right: 0.25em; padding-left: 0.25em;"></a>Currency restriction</h3>
+                  </div>
+                  <p><em>Currency restriction</em></p>
+                  <table class="sp_table_propertyshapes table-striped table-responsive">
+                     <thead>
+                        <tr>
+                           <th>Property name</th>
+                           <th>URI</th>
+                           <th>Expected value</th>
+                           <th>Card.</th>
+                           <th class="sp_description_column">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</a></code></td>
+                           <td><code>dtv:currency</code><br></td>
+                           <td>
+                              <div style="width:30px">0..*</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </section>
+            </div>
+         </div><br><div class="row mt-3">
+            <div class="col">
+               <section id="dto:MeasurementUnitRestriction">
+                  <div class="sp_section_title_table_wrapper">
+                     <h3 class="sp_section_title_table" id="measurement-unit-restriction"><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#measurement-unit-restriction" style="position: absolute; margin-left: -1.25em; padding-right: 0.25em; padding-left: 0.25em;"></a>Measurement unit restriction</h3>
+                  </div>
+                  <p><em>Measurement unit restriction</em></p>
+                  <table class="sp_table_propertyshapes table-striped table-responsive">
+                     <thead>
+                        <tr>
+                           <th>Property name</th>
+                           <th>URI</th>
+                           <th>Expected value</th>
+                           <th>Card.</th>
+                           <th class="sp_description_column">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</a></code></td>
+                           <td><code>dtv:unit</code><br></td>
+                           <td>
+                              <div style="width:30px">0..*</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </section>
+            </div>
+         </div><br><div class="row mt-3">
+            <div class="col">
+               <section id="dto:TransportationRestriction">
+                  <div class="sp_section_title_table_wrapper">
+                     <h3 class="sp_section_title_table" id="mode-of-transportation-restriction"><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#mode-of-transportation-restriction" style="position: absolute; margin-left: -1.25em; padding-right: 0.25em; padding-left: 0.25em;"></a>Mode of transportation restriction</h3>
+                  </div>
+                  <p><em>Mode of transportation status restriction</em></p>
+                  <table class="sp_table_propertyshapes table-striped table-responsive">
+                     <thead>
+                        <tr>
+                           <th>Property name</th>
+                           <th>URI</th>
+                           <th>Expected value</th>
+                           <th>Card.</th>
+                           <th class="sp_description_column">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</a></code></td>
+                           <td><code>dtv:transportation</code><br></td>
+                           <td>
+                              <div style="width:30px">0..*</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </section>
+            </div>
+         </div><br><div class="row mt-3">
+            <div class="col">
+               <section id="dto:PerceptionTypeRestriction">
+                  <div class="sp_section_title_table_wrapper">
+                     <h3 class="sp_section_title_table" id="perception-type-restriction"><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#perception-type-restriction" style="position: absolute; margin-left: -1.25em; padding-right: 0.25em; padding-left: 0.25em;"></a>Perception type restriction</h3>
+                  </div>
+                  <p><em>Perception type restriction</em></p>
+                  <table class="sp_table_propertyshapes table-striped table-responsive">
+                     <thead>
+                        <tr>
+                           <th>Property name</th>
+                           <th>URI</th>
+                           <th>Expected value</th>
+                           <th>Card.</th>
+                           <th class="sp_description_column">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</a></code></td>
+                           <td><code>dtv:perception</code><br></td>
+                           <td>
+                              <div style="width:30px">0..*</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </section>
+            </div>
+         </div><br><div class="row mt-3">
+            <div class="col">
+               <section id="dto:TravelTypeRestriction">
+                  <div class="sp_section_title_table_wrapper">
+                     <h3 class="sp_section_title_table" id="travel-type-restriction"><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#travel-type-restriction" style="position: absolute; margin-left: -1.25em; padding-right: 0.25em; padding-left: 0.25em;"></a>Travel type restriction</h3>
+                  </div>
+                  <p><em>Travel type restriction</em></p>
+                  <table class="sp_table_propertyshapes table-striped table-responsive">
+                     <thead>
+                        <tr>
+                           <th>Property name</th>
+                           <th>URI</th>
+                           <th>Expected value</th>
+                           <th>Card.</th>
+                           <th class="sp_description_column">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</a></code></td>
+                           <td><code>dtv:travel</code><br></td>
+                           <td>
+                              <div style="width:30px">0..*</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </section>
+            </div>
+         </div><br><div class="row mt-3">
+            <div class="col">
+               <section id="dto:Commercial_buyShape">
+                  <div class="sp_section_title_table_wrapper">
+                     <h3 class="sp_section_title_table" id="dto-commercial_buyshape"><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#dto-commercial_buyshape" style="position: absolute; margin-left: -1.25em; padding-right: 0.25em; padding-left: 0.25em;"></a>dto:Commercial_buyShape</h3>
+                  </div>
+                  <ul class="sp_list_description_properties">
+                     <li>Applies to: <a href="http://dehisre.ios-regensburg.de/ontology/Commercial_buy">dto:Commercial_buy</a></li>
+                  </ul>
+                  <table class="sp_table_propertyshapes table-striped table-responsive">
+                     <thead>
+                        <tr>
+                           <th>Property name</th>
+                           <th>URI</th>
+                           <th>Expected value</th>
+                           <th>Card.</th>
+                           <th class="sp_description_column">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P7_took_place_at">ecrm:P7_took_place_at</a></code></td>
+                           <td><code>ecrm:E53_Place</code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P183i_starts_after_the_end_of">ecrm:P183i_starts_after_the_end_of</a></code></td>
+                           <td><code>ecrm:E7_Activity</code><br></td>
+                           <td>
+                              <div style="width:30px">0..*</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr>
+                           <td>has seller</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/seller">dto:seller</a></code></td>
+                           <td><code>ecrm:E39_Actor</code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">The seller.</td>
+                        </tr>
+                        <tr>
+                           <td>has money</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/money">dto:money</a></code></td>
+                           <td><code><a href="#dto:MoneyDimensionShape">dto:MoneyDimensionShape</a></code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">The amount of money exchanged for the goods.</td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P70i_is_documented_in">ecrm:P70i_is_documented_in</a></code></td>
+                           <td><code>efrbroo:F23_Expression_Fragment</code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P9i_forms_part_of">ecrm:P9i_forms_part_of</a></code></td>
+                           <td><code>ecrm:E7_Activity</code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr>
+                           <td>has buyer</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/buyer">dto:buyer</a></code></td>
+                           <td><code>ecrm:E21_Person</code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">The buyer.</td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P4_has_time-span">ecrm:P4_has_time-span</a></code></td>
+                           <td><code>ecrm:E52_Time-Span</code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr>
+                           <td>has goods</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/goods">dto:goods</a></code></td>
+                           <td><code>ecrm:E19_Physical_Object</code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">The goods exchanged for money.</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </section>
+            </div>
+         </div><br><div class="row mt-3">
+            <div class="col">
+               <section id="dto:DistanceDimensionShape">
+                  <div class="sp_section_title_table_wrapper">
+                     <h3 class="sp_section_title_table" id="dto-distancedimensionshape"><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#dto-distancedimensionshape" style="position: absolute; margin-left: -1.25em; padding-right: 0.25em; padding-left: 0.25em;"></a>dto:DistanceDimensionShape</h3>
+                  </div>
+                  <ul class="sp_list_description_properties">
+                     <li>Applies to: <a href="http://erlangen-crm.org/current/E54_Dimension">ecrm:E54_Dimension</a></li>
+                  </ul>
+                  <table class="sp_table_propertyshapes table-striped table-responsive">
+                     <thead>
+                        <tr>
+                           <th>Property name</th>
+                           <th>URI</th>
+                           <th>Expected value</th>
+                           <th>Card.</th>
+                           <th class="sp_description_column">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P90_has_value">ecrm:P90_has_value</a></code></td>
+                           <td><code>xsd:integer</code><code> or </code><code>xsd:decimal</code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P91_has_unit">ecrm:P91_has_unit</a></code></td>
+                           <td><code><a href="#dto:MeasurementUnitRestriction">Measurement unit restriction</a></code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">A concept from controlled vocabulary for measurement unit has to be used to classify
+                              the unit of the measurement.</td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P3_has_note">ecrm:P3_has_note</a></code></td>
+                           <td><code>rdfs:Literal</code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </section>
+            </div>
+         </div><br><div class="row mt-3">
+            <div class="col">
+               <section id="dto:Exchange_currencyShape">
+                  <div class="sp_section_title_table_wrapper">
+                     <h3 class="sp_section_title_table" id="dto-exchange_currencyshape"><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#dto-exchange_currencyshape" style="position: absolute; margin-left: -1.25em; padding-right: 0.25em; padding-left: 0.25em;"></a>dto:Exchange_currencyShape</h3>
+                  </div>
+                  <ul class="sp_list_description_properties">
+                     <li>Applies to: <a href="http://dehisre.ios-regensburg.de/ontology/Exchange_currency">dto:Exchange_currency</a></li>
+                  </ul>
+                  <table class="sp_table_propertyshapes table-striped table-responsive">
+                     <thead>
+                        <tr>
+                           <th>Property name</th>
+                           <th>URI</th>
+                           <th>Expected value</th>
+                           <th>Card.</th>
+                           <th class="sp_description_column">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>has money exchange service</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/exchange_service">dto:exchange_service</a></code></td>
+                           <td><code>ecrm:E39_Actor</code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">The money exchange service (person or institution).</td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P70i_is_documented_in">ecrm:P70i_is_documented_in</a></code></td>
+                           <td><code>efrbroo:F23_Expression_Fragment</code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr>
+                           <td>has money owner</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/money_owner">dto:money_owner</a></code></td>
+                           <td><code>ecrm:E21_Person</code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">The money owner.</td>
+                        </tr>
+                        <tr>
+                           <td>has exchange rate</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/exchange_rate">dto:exchange_rate</a></code></td>
+                           <td><code>xsd:decimal</code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">The exchange rate.</td>
+                        </tr>
+                        <tr>
+                           <td>has source currency</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/source_currency">dto:source_currency</a></code></td>
+                           <td><code><a href="#dto:CurrencyRestriction">Currency restriction</a></code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">A concept from the controlled vocabulary for currencies has to be used to describe
+                              the source currency.</td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P183i_starts_after_the_end_of">ecrm:P183i_starts_after_the_end_of</a></code></td>
+                           <td><code>ecrm:E7_Activity</code><br></td>
+                           <td>
+                              <div style="width:30px">0..*</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr>
+                           <td>has target currency</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/target_currency">dto:target_currency</a></code></td>
+                           <td><code><a href="#dto:CurrencyRestriction">Currency restriction</a></code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">A concept from the controlled vocabulary for currencies has to be used to describe
+                              the target currency.</td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P7_took_place_at">ecrm:P7_took_place_at</a></code></td>
+                           <td><code>ecrm:E53_Place</code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P4_has_time-span">ecrm:P4_has_time-span</a></code></td>
+                           <td><code>ecrm:E52_Time-Span</code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P9i_forms_part_of">ecrm:P9i_forms_part_of</a></code></td>
+                           <td><code>ecrm:E7_Activity</code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr>
+                           <td>has sum of money (target currency)</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/sum_2">dto:sum_2</a></code></td>
+                           <td><code>xsd:decimal</code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">The sum of money in the target currency.</td>
+                        </tr>
+                        <tr>
+                           <td>has sum of money (source currency)</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/sum_1">dto:sum_1</a></code></td>
+                           <td><code>xsd:decimal</code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">The sum of money in the source currency.</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </section>
+            </div>
+         </div><br><div class="row mt-3">
+            <div class="col">
+               <section id="dto:MoneyDimensionShape">
+                  <div class="sp_section_title_table_wrapper">
+                     <h3 class="sp_section_title_table" id="dto-moneydimensionshape"><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#dto-moneydimensionshape" style="position: absolute; margin-left: -1.25em; padding-right: 0.25em; padding-left: 0.25em;"></a>dto:MoneyDimensionShape</h3>
+                  </div>
+                  <ul class="sp_list_description_properties">
+                     <li>Applies to: <a href="http://erlangen-crm.org/current/E54_Dimension">ecrm:E54_Dimension</a></li>
+                  </ul>
+                  <table class="sp_table_propertyshapes table-striped table-responsive">
+                     <thead>
+                        <tr>
+                           <th>Property name</th>
+                           <th>URI</th>
+                           <th>Expected value</th>
+                           <th>Card.</th>
+                           <th class="sp_description_column">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P90_has_value">ecrm:P90_has_value</a></code></td>
+                           <td><code>xsd:decimal</code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P91_has_unit">ecrm:P91_has_unit</a></code></td>
+                           <td><code><a href="#dto:CurrencyRestriction">Currency restriction</a></code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">A concept from controlled vocabulary for measurement unit has to be used to describe
+                              the kind of currency.</td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P3_has_note">ecrm:P3_has_note</a></code></td>
+                           <td><code>rdfs:Literal</code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </section>
+            </div>
+         </div><br><div class="row mt-3">
+            <div class="col">
+               <section id="dto:Perception_activeShape">
+                  <div class="sp_section_title_table_wrapper">
+                     <h3 class="sp_section_title_table" id="dto-perception_activeshape"><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#dto-perception_activeshape" style="position: absolute; margin-left: -1.25em; padding-right: 0.25em; padding-left: 0.25em;"></a>dto:Perception_activeShape</h3>
+                  </div>
+                  <ul class="sp_list_description_properties">
+                     <li>Applies to: <a href="http://dehisre.ios-regensburg.de/ontology/Perception_active">dto:Perception_active</a></li>
+                  </ul>
+                  <table class="sp_table_propertyshapes table-striped table-responsive">
+                     <thead>
+                        <tr>
+                           <th>Property name</th>
+                           <th>URI</th>
+                           <th>Expected value</th>
+                           <th>Card.</th>
+                           <th class="sp_description_column">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P2_has_type">ecrm:P2_has_type</a></code></td>
+                           <td><code><a href="#dto:PerceptionTypeRestriction">Perception type restriction</a></code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">A concept from the classification system for perception types has to be used to typify
+                              a perception instance.</td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P70i_is_documented_in">ecrm:P70i_is_documented_in</a></code></td>
+                           <td><code>efrbroo:F23_Expression_Fragment</code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr>
+                           <td>has perceiver agentive</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/perceiver_agentive">dto:perceiver_agentive</a></code></td>
+                           <td><code>ecrm:E21_Person</code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">The agentive perceiver.</td>
+                        </tr>
+                        <tr>
+                           <td>has phenomenon</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/phenomenon">dto:phenomenon</a></code></td>
+                           <td><code>ecrm:E1_CRM_Entity</code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">The phenomenon to which the observer directs his or her attention.</td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P9i_forms_part_of">ecrm:P9i_forms_part_of</a></code></td>
+                           <td><code>ecrm:E7_Activity</code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P4_has_time-span">ecrm:P4_has_time-span</a></code></td>
+                           <td><code>ecrm:E52_Time-Span</code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P183i_starts_after_the_end_of">ecrm:P183i_starts_after_the_end_of</a></code></td>
+                           <td><code>ecrm:E7_Activity</code><br></td>
+                           <td>
+                              <div style="width:30px">0..*</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P7_took_place_at">ecrm:P7_took_place_at</a></code></td>
+                           <td><code>ecrm:E53_Place</code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </section>
+            </div>
+         </div><br><div class="row mt-3">
+            <div class="col">
+               <section id="dto:TravelShape">
+                  <div class="sp_section_title_table_wrapper">
+                     <h3 class="sp_section_title_table" id="dto-travelshape"><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#dto-travelshape" style="position: absolute; margin-left: -1.25em; padding-right: 0.25em; padding-left: 0.25em;"></a>dto:TravelShape</h3>
+                  </div>
+                  <ul class="sp_list_description_properties">
+                     <li>Applies to: <a href="http://dehisre.ios-regensburg.de/ontology/Travel">dto:Travel</a></li>
+                  </ul>
+                  <table class="sp_table_propertyshapes table-striped table-responsive">
+                     <thead>
+                        <tr>
+                           <th>Property name</th>
+                           <th>URI</th>
+                           <th>Expected value</th>
+                           <th>Card.</th>
+                           <th class="sp_description_column">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>has traveler</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/traveler">dto:traveler</a></code></td>
+                           <td><code>ecrm:E21_Person</code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">The traveler.</td>
+                        </tr>
+                        <tr>
+                           <td>has destination place</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/goal">dto:goal</a></code></td>
+                           <td><code>ecrm:E53_Place</code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">The destination place of the travel.</td>
+                        </tr>
+                        <tr>
+                           <td>has path</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/path">dto:path</a></code></td>
+                           <td><code>ecrm:E53_Place</code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">Path of the journey.</td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P70i_is_documented_in">ecrm:P70i_is_documented_in</a></code></td>
+                           <td><code>efrbroo:F23_Expression_Fragment</code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr>
+                           <td>has starting place</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/source">dto:source</a></code></td>
+                           <td><code>ecrm:E53_Place</code><br></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">The starting point of the travel.</td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P9i_forms_part_of">ecrm:P9i_forms_part_of</a></code></td>
+                           <td><code><a href="#dto:TravelShape">dto:TravelShape</a></code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P2_has_type">ecrm:P2_has_type</a></code></td>
+                           <td><code><a href="#dto:TravelTypeRestriction">Travel type restriction</a></code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">A concept from the classification system for travel types has to be used to typify
+                              a travel instance.</td>
+                        </tr>
+                        <tr>
+                           <td>has mode of transportation</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/mode_of_transportation">dto:mode_of_transportation</a></code></td>
+                           <td><code><a href="#dto:TransportationRestriction">Mode of transportation restriction</a></code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">A concept from the classification system for transportation types has to be used to
+                              classify the mode of transportation.</td>
+                        </tr>
+                        <tr>
+                           <td>has distance</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/distance">dto:distance</a></code></td>
+                           <td><code><a href="#dto:DistanceDimensionShape">dto:DistanceDimensionShape</a></code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">The distance traveled.</td>
+                        </tr>
+                        <tr>
+                           <td>has fellow-traveler</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/co-participant">dto:co-participant</a></code></td>
+                           <td><code>ecrm:E39_Actor</code><br></td>
+                           <td>
+                              <div style="width:30px">0..*</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">A fellow-traveler.</td>
+                        </tr>
+                        <tr>
+                           <td>has baggage</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/baggage">dto:baggage</a></code></td>
+                           <td><code>ecrm:E19_Physical_Object</code><br></td>
+                           <td>
+                              <div style="width:30px">0..*</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">An object on the journey.</td>
+                        </tr>
+                        <tr>
+                           <td>has vehicle</td>
+                           <td><code><a href="http://dehisre.ios-regensburg.de/ontology/vehicle">dto:vehicle</a></code></td>
+                           <td><code>ecrm:E22_Human-Made_Object</code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">The particular vehicle used by the traveler.</td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P134_continued">ecrm:P134_continued</a></code></td>
+                           <td><code><a href="#dto:TravelShape">dto:TravelShape</a></code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P4_has_time-span">ecrm:P4_has_time-span</a></code></td>
+                           <td><code>ecrm:E52_Time-Span</code><br></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td><code><a href="http://erlangen-crm.org/current/P183i_starts_after_the_end_of">ecrm:P183i_starts_after_the_end_of</a></code></td>
+                           <td><code><a href="#dto:TravelShape">dto:TravelShape</a></code><br></td>
+                           <td>
+                              <div style="width:30px">0..*</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </section>
+            </div>
+         </div><br></div><script src="dto_files/anchor.min.js">//</script><script>				
+					anchors.options = {
+	                    icon: '#'
+	                  };
+               		anchors.options.placement = 'left';
+					anchors.add();		
+				</script>
+</body></html>

@@ -1,0 +1,213 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+@prefix dto: <http://dehisre.ios-regensburg.de/ontology/> .
+@prefix dtv: <http://dehisre.ios-regensburg.de/vocabulary/> .
+
+@prefix dtv-travel: <http://dehisre.ios-regensburg.de/vocabulary/travel/> .
+@prefix dtv-transportation: <http://dehisre.ios-regensburg.de/vocabulary/transportation/> .
+
+@prefix dtv-unit: <http://dehisre.ios-regensburg.de/vocabulary/unit/> .
+
+@prefix ecrm: <http://erlangen-crm.org/current/> .
+@prefix efrbroo: <http://erlangen-crm.org/efrbroo/> .
+
+
+dto:TravelShape a sh:NodeShape ;
+  sh:targetClass dto:Travel ;
+  sh:property [
+    sh:node dto:TravelTypeRestriction ;
+    sh:nodeKind sh:IRI ;
+    sh:path ecrm:P2_has_type ;
+    sh:description "A concept from the classification system for travel types has to be used to typify a travel instance."@en ; 
+    sh:maxCount 1 ;
+    sh:severity sh:Violation
+  ] ;
+  sh:property [
+    sh:path dto:mode_of_transportation ;
+    sh:nodeKind sh:IRI ;
+    sh:node dto:TransportationRestriction ;
+    sh:description "A concept from the classification system for transportation types has to be used to classify the mode of transportation."@en ; 
+    #sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation
+  ] ;
+  sh:property [
+    sh:path dto:traveler ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:class ecrm:E21_Person ;
+  ] ;
+  sh:property [
+    sh:path dto:source ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:class ecrm:E53_Place ;
+  ] ;
+  sh:property [
+    sh:path dto:goal ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:class ecrm:E53_Place ;
+  ] ;
+  sh:property [
+    sh:path dto:path ;
+    #sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:class ecrm:E53_Place ;
+  ] ;
+
+  sh:property [
+    sh:path dto:co-participant ;
+    #sh:minCount 1 ;
+    #sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:class ecrm:E39_Actor ;
+  ] ;
+  sh:property [
+    sh:path dto:baggage ;
+    #sh:minCount 1 ;
+    #sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:class ecrm:E19_Physical_Object ;
+  ] ;
+
+  sh:property [
+    sh:path dto:vehicle ;
+    #sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:class ecrm:E22_Human-Made_Object ;
+  ] ;
+
+  sh:property [
+    sh:path dto:distance ;
+    #sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    # sh:class ecrm:E54_Dimension ;
+    sh:node dto:DistanceDimensionShape ;
+  ] ;
+
+
+  sh:property [
+    sh:path ecrm:P4_has_time-span ;
+    #sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:class ecrm:E52_Time-Span ;
+  ] ;
+
+  sh:property [
+    sh:path ecrm:P183i_starts_after_the_end_of ;
+    #sh:minCount 1 ;
+    #sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:class dto:Travel ;
+  ] ;
+
+  sh:property [
+    sh:path ecrm:P134_continued ;
+    #sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:class dto:Travel ;
+  ] ;
+
+  sh:property [
+    sh:path ecrm:P9i_forms_part_of ;
+    #sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:class dto:Travel ;
+  ] ;
+
+  sh:property [
+    sh:path ecrm:P70i_is_documented_in ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:class efrbroo:F23_Expression_Fragment ;
+    #sh:class ecrm:E31_Document ;
+  ] ;
+
+.
+
+
+dto:DistanceDimensionShape a sh:NodeShape ;
+  sh:targetClass ecrm:E54_Dimension ;
+
+  sh:property [
+    sh:path ecrm:P90_has_value ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+	  sh:or ( [ sh:datatype xsd:integer ] [ sh:datatype xsd:decimal ] )
+  ] ;
+  sh:property [
+    sh:node dto:MeasurementUnitRestriction ;
+    sh:nodeKind sh:IRI ;
+    sh:path ecrm:P91_has_unit ;
+    sh:description "A concept from controlled vocabulary for measurement unit has to be used to classify the unit of the measurement."@en ; 
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation
+  ] ;
+
+  sh:property [
+    sh:path ecrm:P3_has_note ;
+    #sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype rdfs:Literal ;
+  ] ;
+.
+
+dto:MeasurementUnitRestriction a sh:NodeShape ;
+  rdfs:comment "Measurement unit restriction" ;
+  rdfs:label "Measurement unit restriction" ;
+  sh:property [
+    #sh:class skos:ConceptScheme ;
+    sh:hasValue dtv:unit ;
+    ##sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:path skos:inScheme
+  ]
+.
+
+
+dto:TravelTypeRestriction a sh:NodeShape ;
+  rdfs:comment "Travel type restriction" ;
+  rdfs:label "Travel type restriction" ;
+  sh:property [
+    #sh:class skos:ConceptScheme ;
+    sh:hasValue dtv:travel ;
+    # sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:path skos:inScheme
+  ]
+.
+
+dto:TransportationRestriction a sh:NodeShape ;
+  rdfs:comment "Mode of transportation status restriction" ;
+  rdfs:label "Mode of transportation restriction" ;
+  sh:property [
+    #sh:class skos:ConceptScheme ;
+    sh:hasValue dtv:transportation ;
+    # sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:path skos:inScheme
+  ]
+.
+
+

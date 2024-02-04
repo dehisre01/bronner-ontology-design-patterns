@@ -1,0 +1,17 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix dto: <http://dehisre.ios-regensburg.de/ontology/> .
+@prefix dtv: <http://dehisre.ios-regensburg.de/vocabulary/> .
+
+@prefix dtv-currency: <http://dehisre.ios-regensburg.de/vocabulary/currency/> .
+
+
+dtv:currency a skos:ConceptScheme ;
+  rdfs:label "Währungen"@de , "Kinds of Currencies"@en ;
+  skos:notation "koc" ;
+  skos:prefLabel "Währungen"@de ;
+  skos:prefLabel "Kinds of Currencies"@en 
+.

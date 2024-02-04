@@ -1,0 +1,132 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+@prefix dto: <http://dehisre.ios-regensburg.de/ontology/> .
+@prefix dtv: <http://dehisre.ios-regensburg.de/vocabulary/> .
+
+@prefix dtv-currency: <http://dehisre.ios-regensburg.de/vocabulary/currency/> .
+
+@prefix ecrm: <http://erlangen-crm.org/current/> .
+@prefix efrbroo: <http://erlangen-crm.org/efrbroo/> .
+
+
+dto:Exchange_currencyShape a sh:NodeShape ;
+  sh:targetClass dto:Exchange_currency ;
+  sh:property [
+    sh:path dto:sum_1 ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:decimal ;
+  ] ;
+  sh:property [
+    sh:node dto:CurrencyRestriction ;
+    sh:nodeKind sh:IRI ;
+    sh:path dto:source_currency ;
+    sh:description "A concept from the controlled vocabulary for currencies has to be used to describe the source currency."@en ; 
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation
+  ] ;
+  sh:property [
+    sh:path dto:sum_2 ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:decimal ;
+  ] ;
+  sh:property [
+    sh:node dto:CurrencyRestriction ;
+    sh:nodeKind sh:IRI ;
+    sh:path dto:target_currency ;
+    sh:description "A concept from the controlled vocabulary for currencies has to be used to describe the target currency."@en ; 
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation
+  ] ;
+  sh:property [
+    sh:path dto:money_owner ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:class ecrm:E21_Person ;
+  ] ;
+  sh:property [
+    sh:path dto:exchange_service ;
+    #sh:minCount 1 ; # !?
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:class ecrm:E39_Actor ;
+  ] ;
+  sh:property [
+    sh:path dto:exchange_rate ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:decimal ;
+  ] ;
+
+  sh:property [
+    ##sh:path dto:place ;
+    sh:path ecrm:P7_took_place_at ;
+    #sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:class ecrm:E53_Place ;
+  ] ;
+
+  sh:property [
+    sh:path ecrm:P4_has_time-span ;
+    #sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:class ecrm:E52_Time-Span ;
+  ] ;
+
+
+  sh:property [
+    sh:path ecrm:P183i_starts_after_the_end_of ;
+    #sh:minCount 1 ;
+    #sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    #sh:class dto:Travel ;
+    sh:class ecrm:E7_Activity ;
+  ] ;
+
+  sh:property [
+    sh:path ecrm:P9i_forms_part_of ;
+    #sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:class ecrm:E7_Activity ;
+  ] ;
+
+  sh:property [
+    sh:path ecrm:P70i_is_documented_in ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:class efrbroo:F23_Expression_Fragment ;
+    #sh:class ecrm:E31_Document ;
+  ] ;
+
+.
+
+dto:CurrencyRestriction a sh:NodeShape ;
+  rdfs:comment "Currency restriction" ;
+  rdfs:label "Currency restriction" ;
+  sh:property [
+    #sh:class skos:ConceptScheme ;
+    sh:hasValue dtv:currency ;
+    # sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:path skos:inScheme
+  ]
+.
+
+
+

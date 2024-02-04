@@ -1,0 +1,106 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix dto: <http://dehisre.ios-regensburg.de/ontology/> .
+@prefix dtv: <http://dehisre.ios-regensburg.de/vocabulary/> .
+
+@prefix dtv-perception: <http://dehisre.ios-regensburg.de/vocabulary/perception/> .
+
+
+dtv:perception a skos:ConceptScheme ;
+  rdfs:label "Wahrnehmungsarten"@de , "Perception Types"@en ;
+  skos:notation "pt" ;
+  skos:prefLabel "Wahrnehmungsarten"@de ;
+  skos:prefLabel "Perception Types"@en ;
+  skos:hasTopConcept dtv-perception:seeing ;
+  skos:hasTopConcept dtv-perception:study ;
+  skos:hasTopConcept dtv-perception:participate
+.
+
+dtv-perception:seeing a skos:Concept ;
+  rdfs:label "Sehen"@de , "Seeing"@en ;
+  skos:prefLabel "Sehen"@de ;
+  skos:prefLabel "Seeing"@en ;
+  skos:inScheme dtv:perception
+.
+
+dtv-perception:sees a skos:Concept ;
+  rdfs:label "sieht"@de , "sees"@en ;
+  skos:prefLabel "sieht"@de ;
+  skos:prefLabel "sees"@en ;
+  skos:broader dtv-perception:seeing ;
+  skos:inScheme dtv:perception
+.
+
+dtv-perception:tried_to_see a skos:Concept ;
+  rdfs:label "versucht vergeblich zu besichtigen/sehen"@de , "tried in vain to visit/see"@en ;
+  skos:prefLabel "versucht vergeblich zu besichtigen/sehen"@de ;
+  skos:prefLabel "tried in vain to visit/see"@en ;
+  skos:broader dtv-perception:seeing ;
+  skos:inScheme dtv:perception
+.
+
+dtv-perception:does_not_want_to_visit a skos:Concept ;
+  rdfs:label "will nicht besichtigen"@de , "does not want to visit"@en ;
+  skos:prefLabel "will nicht besichtigen"@de ;
+  skos:prefLabel "does not want to visit"@en ;
+  skos:broader dtv-perception:seeing ;
+  skos:inScheme dtv:perception
+.
+
+dtv-perception:study a skos:Concept ;
+  rdfs:label "Lesen und Lernen"@de , "Study"@en ;
+  skos:prefLabel "Lesen und Lernen"@de ;
+  skos:prefLabel "study"@en ;
+  skos:inScheme dtv:perception
+.
+
+dtv-perception:reads a skos:Concept ;
+  rdfs:label "liest"@de , "reads"@en ;
+  skos:prefLabel "liest"@de ;
+  skos:prefLabel "reads"@en ;
+  skos:broader dtv-perception:study ;
+  skos:inScheme dtv:perception
+.
+
+dtv-perception:learns a skos:Concept ;
+  rdfs:label "lernt"@de , "learns"@en ;
+  skos:prefLabel "lernt"@de ;
+  skos:prefLabel "learns"@en ;
+  skos:broader dtv-perception:study ;
+  skos:inScheme dtv:perception
+.
+
+dtv-perception:participate a skos:Concept ;
+  rdfs:label "Teilnehmen"@de , "Participate"@en ;
+  skos:prefLabel "Teilnehmen"@de ;
+  skos:prefLabel "Participate"@en ;
+  skos:inScheme dtv:perception
+.
+
+dtv-perception:attends_performance a skos:Concept ;
+  rdfs:label "besucht Aufführung"@de , "attends performance"@en ;
+  skos:prefLabel "besucht Aufführung"@de ;
+  skos:prefLabel "attends performance"@en ;
+  skos:broader dtv-perception:participate ;
+  skos:inScheme dtv:perception
+.
+
+dtv-perception:celebrate a skos:Concept ;
+  rdfs:label "feiern/begehen"@de , "celebrate"@en ;
+  skos:prefLabel "feiern"@de ;
+  skos:prefLabel "celebrate"@en ;
+  skos:altLabel "begehen"@de ;
+  skos:broader dtv-perception:participate ;
+  skos:inScheme dtv:perception
+.
+
+dtv-perception:attends_divine_service a skos:Concept ;
+  rdfs:label "besucht Gottesdienst"@de , "attends divine service"@en ;
+  skos:prefLabel "besucht Gottesdienst"@de ;
+  skos:prefLabel "attends divine service"@en ;
+  skos:broader dtv-perception:participate ;
+  skos:inScheme dtv:perception
+.
