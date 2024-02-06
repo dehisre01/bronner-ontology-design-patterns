@@ -34,7 +34,7 @@ The Exchange Currency Pattern is based on the FrameNet frame [`Exchange_currency
 
 ## Annotation Scheme
 
-Semantic annotation of a TEI encoded segment in a historical travelogue can be achieved by applying EARMARK (Extremely Annotational RDF Markup) annotation to e.g. a TEI element `seg` linking an excplicitly modeled travel event via FRBRoo representation and XPath expression to the text snippet documenting that event (i.e. part of the travelogue reporting about that travel event as part of the whole travel).  
+Semantic annotation of a TEI encoded segment in a historical travelogue can be achieved by applying EARMARK (Extremely Annotational RDF Markup) annotation to e.g. a TEI element `seg` linking an explicitly modeled travel event via FRBRoo representation and XPath expression to the text snippet documenting that event (i.e. part of the travelogue reporting about that travel event as part of the whole travel).  
 
-![Proposal for an annotation scheme using standoff annotation with EARMARK for linking text and data](/dia/anno_fbroo_earmark.png)
+![Proposal for an annotation scheme using standoff annotation with EARMARK for linking text and data](/dia/anno_frbroo_earmark.png)
 
