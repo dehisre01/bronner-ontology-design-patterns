@@ -42,7 +42,7 @@
   dct:creator "Ingo Frank" ;
   dct:created "2022-11-13"^^xsd:date ;
   dct:issued "2022-11-14"^^xsd:date ;
-  dct:modified "2024-02-06"^^xsd:date ;
+  dct:modified "2024-03-09"^^xsd:date ;
   dct:publisher "DEHisRe" ;
   dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
   dct:title "Digital Editions of Historical Travelogues Ontology (DTO)"@en ;
@@ -52,7 +52,7 @@
   rdfs:comment "Draft of OWL ontology and SHACL shapes for Frame-based Ontology Design Patterns for the DTO (Digital Editions of Historical Travelogues Ontology)"@en ;
   #owl:imports <http://d-nb.info/standards/elementset/agrelon> ;
   owl:imports <http://erlangen-crm.org/current/> , <http://erlangen-crm.org/efrbroo/> ;
-  owl:versionInfo "0.0.1"^^xsd:string 
+  owl:versionInfo "0.0.2"^^xsd:string 
 .
 
 
@@ -135,13 +135,6 @@ dto:distance a owl:ObjectProperty ;
   rdfs:comment "Das auf der Reise zurückgelegte Strecke."@de , "The distance traveled."@en ;
   rdfs:domain dto:Travel ;
   rdfs:range ecrm:E54_Dimension  
-.
-
-
-dto:Stopover a owl:Class ;
-  rdfs:subClassOf ecrm:E7_Activity ;
-  rdfs:label "Zwischenstopp"@de , "Stopover"@en ; 
-  rdfs:comment "Ein kurzer oder längerer Zwischenstopp."@de , "A short or longer stay at some place (settlement or unnamed location) between two segments of a journey."@en 
 .
 
 
@@ -272,10 +265,6 @@ dto:Transport a owl:Class ;
   rdfs:label "Transport"@de , "Transport"@en ; 
   rdfs:comment "Ein (zusammengesetztes) Transportereignis."@de , "A (complex) transport event."@en 
 .
-
-# P15 was influenced by (influenced)  ?!
-
-# P17 was motivated by (motivated)  ?? 
 
 
 

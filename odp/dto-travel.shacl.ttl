@@ -120,6 +120,8 @@ dto:TravelShape a sh:NodeShape ;
 
   sh:property [
     sh:path ecrm:P134_continued ;
+    # P15 was influenced by (influenced) ?!
+    # P17 was motivated by (motivated) ??     
     #sh:minCount 1 ;
     sh:maxCount 1 ;
     sh:nodeKind sh:IRI ;
